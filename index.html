@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Plan de Evangelismo Comunitario con Base Bíblica</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+            color: #102A43;
+        }
+        .brand-deep-blue { background-color: #00446A; }
+        .brand-bright-blue { background-color: #0078B4; }
+        .brand-sky-blue { background-color: #00AEEF; }
+        .brand-light-sky-blue { background-color: #7DDFFF; }
+
+        .text-brand-deep-blue { color: #00446A; }
+        .text-brand-bright-blue { color: #0078B4; }
+        .text-brand-sky-blue { color: #00AEEF; }
+        .text-brand-light-sky-blue { color: #7DDFFF; }
+
+        .border-brand-bright-blue { border-color: #0078B4; }
+        .border-brand-sky-blue { border-color: #00AEEF; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-step {
+            border-left-width: 4px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .flow-step:before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #0078B4;
+            border: 3px solid #F0F4F8;
+        }
+        .flow-step:last-child {
+            border-left: 4px solid transparent;
+        }
+        .biblical-concept {
+            @apply flex flex-col items-center justify-center p-4 rounded-lg shadow-md brand-bright-blue text-white text-center;
+        }
+        .biblical-concept-small {
+             @apply flex flex-col items-center justify-center p-2 rounded-lg shadow-md brand-sky-blue text-white text-center text-sm;
+        }
+        .step-indicator {
+            @apply bg-brand-deep-blue text-white rounded-full h-8 w-8 flex items-center justify-center font-bold text-sm absolute -left-4 top-0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            background-color: #0078B4;
+            border-radius: 50%;
+            border: 3px solid #F0F4F8;
+            z-index: 1;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 1rem;
+            height: calc(100% - 1rem);
+            width: 2px;
+            background-color: #CBD5E0;
+            z-index: 0;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="brand-deep-blue text-white p-8 text-center shadow-lg">
+       <img src="LOGO.png" alt="Logo de Plan de Evangelismo CRUZANDO EL MAR ROJO" class="absolute top-20 left-4 h-16 w-8 sm:top-4 sm:left-4 md:h-20 md:w-10 rounded-full shadow-lg">
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">Plan de Evangelismo "CRUZANDO EL MAR ROJO"</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-brand-light-sky-blue mb-4">Un modelo de 4 días para transformar comunidades</p>
+        <p class="text-sm md:text-xl max-w-3xl mx-auto text-brand-light-sky-blue">DE LA COMPASIÓN AL DISCIPULADO</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="fundamentos" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-brand-deep-blue">La Base de Todo: Evangelismo y Discipulado</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">La misión de la iglesia es clara: ¡evangelizar y discipular! Son dos cosas que van de la mano para cambiar vidas y comunidades. Discipular es un camino que dura toda la vida para cualquiera que sigue a Jesús. ¡No te pierdas estos puntos clave!</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-brand-bright-blue">
+                        <h3 class="text-xl font-bold text-brand-deep-blue mb-2">Evangelismo y Discipulado: ¡Plan de Éxito!</h3>
+                        <p class="text-gray-700 mb-2">La iglesia busca transformar vidas. El discipulado es un camino que dura toda la vida, aprendiendo, corrigiendo y amando. <b>Hechos 1:8</b> y <b>2:42-47</b></p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-brand-bright-blue">
+                        <h3 class="text-xl font-bold text-brand-deep-blue mb-2">La Iglesia, ¡El Mejor Lugar para Crecer!</h3>
+                        <p class="text-gray-700 mb-2">Aquí es donde formamos discípulos, fortalecemos la fe y animamos a más personas a hacer lo mismo. Es clave que todos se involucren <b>Efesios 4:11-16</b> nos lo enseña.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-brand-bright-blue">
+                        <h3 class="text-xl font-bold text-brand-deep-blue mb-2">Compasión y Servicio: Abriendo Puertas</h3>
+                        <p class="text-gray-700 mb-2">Actos de bondad, construir relaciones y servir son las bases para llegar a la gente. <b>Filipenses 2:3-4</b> nos inspira a ser compasivos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diseno-programa" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-brand-deep-blue">Armemos el Plan de Evangelismo de 4 Días</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">Este plan está pensado para conectar al máximo, mostrar compasión y que el mensaje avance poco a poco, terminando en discipulado y servicio ¡Cada día tiene su propósito!</p>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8 col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-deep-blue mb-4">Día 1: Conexión y Compasión</h3>
+                    <p class="text-gray-600 mb-6">El primer día es para generar un lazo emocional y mostrar cuánto le importa la iglesia a la comunidad. Todo para construir confianza y abrir corazones</p>
+                    
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Acto Benéfico</h4>
+                        <p class="text-gray-700">Organizar una comida gratis o un festival puede crear un ambiente cálido. Atender las necesidades del barrio, como una colecta de ropa o entregar canastas de víveres, puede tener un impacto aceptable y abrir muchas de puertas <b>Lucas 14:12-14</b> y <b>Santiago 2:15-16</b></p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Identificación del Equipo: ¡Todos Uniformados!</h4>
+                        <p class="text-gray-700">Que el equipo use algo que los identifique, como la ropa es una estrategia bastante efectiva. Proyecta confianza y profesionalismo. <b>1 Corintios 14:40</b> y <b>2 Corintios 8:21</b></p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Evento Comunitario con ¡Juegos Tradicionales!</h4>
+                        <p class="text-gray-700">Poner juegos tradicionales y un festival atrae a todos. Ayuda a que la gente se integre social y culturalmente, creando un ambiente de unión <b>1 Corintios 9:22</b> y <b>Filipenses 2:4</b></p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Mensaje Inicial: "¡Necesitamos a Dios en Nuestra Vida!"</h4>
+                        <p class="text-gray-700">El primer mensaje de evangelismo debe ser estratégico, apuntando al corazón y a esa parte de nosotros que anhela la eternidad. Como dice <b>Eclesiastés 3:11</b>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Maneras de Conectar y Ser Empáticos</h4>
+                        <p class="text-gray-700">Ser empático y llamar a la gente por su nombre es clave para que se sientan valorados. Demuestra un cuidado genuino y fomenta la confianza. <b>Filipenses 2:3</b> y <b>Juan 10:3</b></p>
+                    </div>
+
+                    <div class="chart-container mt-8">
+                        <canvas id="day1Chart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-4">Este gráfico muestra cómo la compasión, la empatía y la conexión a través de juegos son los pilares fundamentales para el éxito del Día 1. (Todo para construir confianza)</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8 col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-deep-blue mb-4">Día 2: Presentación de Ministerios e Invitación a la Participación</h3>
+                    <p class="text-gray-600 mb-6">El segundo día es para mostrar lo que hacemos en la iglesia y motivar a la gente a involucrarse activamente. ¡Es una invitación al propósito!</p>
+
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Modelos para Presentar los Ministerios de Forma Atractiva</h4>
+                        <p class="text-gray-700">Las iglesias deben tener metas claras y animar a la gente a usar sus dones para servir. ¡Como nos enseña <b>1 Corintios 12:4-11</b> sobre la diversidad de dones!</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Actividades que Motiven la Involucración Comunitaria</h4>
+                        <p class="text-gray-700">Organizar eventos, ofrecer servicios extra o planificar bien el calendario ayuda a atraer gente nueva y compartir la misión. Piensa en <b>Proverbios 11:30</b>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Mensaje Evangelístico Progresivo</h4>
+                        <p class="text-gray-700">Después del Día 1, el siguiente paso es hablar de la ley de Dios para entender que necesitamos un salvador. <b>Romanos 3:20</b> es clave aquí</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Estrategias para Solicitar Visitas Domiciliarias</h4>
+                        <p class="text-gray-700">Pedir permiso para visitar las casas es un paso importante para un compromiso más profundo. ¡Los apóstoles visitaban las casas, como en <b>Hechos 5:42</b>!</p>
+                    </div>
+
+                    <div class="chart-container mt-8">
+                        <canvas id="day2Chart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-4">Este gráfico muestra la relevancia de los diferentes ministerios que podemos presentar. ¡Mostrar cómo la iglesia sirve a varios grupos motiva a la participación!</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8 col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-deep-blue mb-4">Día 3: Profundización del Mensaje de Salvación</h3>
+                    <p class="text-gray-600 mb-6">El tercer día es para que el mensaje sea lo más importante. Aquí nos enfocamos en la "enfermedad" y la "cura" que trae Jesús. ¡Es el clímax del evangelismo!</p>
+
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Estructura y Contenido del Mensaje Central: "La Enfermedad y la Cura" (Pecado y la Cruz)</h4>
+                        <p class="text-gray-700">El evangelismo efectivo termina en la cruz: Cristo crucificado y resucitado. Hablamos de la condición de pecado de la humanidad y la obra redentora de Jesús. <b>1 Corintios 1:18</b> y <b>Romanos 3:10-12</b> son fundamentales</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Enfoque en la Expiación, Redención y Reconciliación</h4>
+                        <p class="text-gray-700">Estas doctrinas son el centro de la cruz: expiación (Cristo hace lo que no podemos, <b>Isaías 53:5</b>), redención (rescata del pecado, <b>Gálatas 3:13</b>) y reconciliación (nos une con Dios, <b>2 Corintios 5:18-19</b>).</p>
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center flex-grow space-y-4 p-4 mt-8">
+                        <div class="w-full text-center bg-sky-100 text-brand-deep-blue p-4 rounded-lg shadow">
+                            <p class="font-semibold">Día 1: ¡Explorar la Necesidad!</p>
+                            <p class="text-sm">"La necesidad de Dios en nuestras vidas" <b>Eclesiastés 3:11</b></p>
+                        </div>
+                        <div class="text-2xl text-brand-bright-blue font-bold">↓</div>
+                        <div class="w-full text-center bg-sky-200 text-brand-deep-blue p-4 rounded-lg shadow">
+                            <p class="font-semibold">Día 2: ¡A Presentar la Ley!</p>
+                            <p class="text-sm">"Reconocer nuestra condición (la enfermedad)" <b>Romanos 3:20</b></p>
+                        </div>
+                        <div class="text-2xl text-brand-bright-blue font-bold">↓</div>
+                        <div class="w-full text-center brand-bright-blue text-white p-4 rounded-lg shadow-lg">
+                            <p class="font-semibold">Día 3: ¡La Gracia nos Salva!</p>
+                            <p class="text-sm">"La solución en la Cruz (la cura)" <b>Juan 3:16</b></p>
+                        </div>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-4">Esta secuencia muestra cómo el mensaje del evangelio progresa día a día. Empezamos con la necesidad, pasamos por la conciencia del pecado y culminamos en la solución que solo Cristo nos da.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8 col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-brand-deep-blue mb-4">Día 4: Consolidación, Visitas Domiciliarias y Discipulado</h3>
+                    <p class="text-gray-600 mb-6">El último día es para consolidar las decisiones, visitar los hogares y empezar formalmente el camino del discipulado. <b>Aquí empieza el crecimiento de verdad</p>
+
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Acceso y Realización de Visitas en los Hogares</h4>
+                        <p class="text-gray-700">Para este día, ya deberíamos poder visitar las casas. ¡Las visitas son clave para seguir a los nuevos convertidos y darles recursos! Los apóstoles predicaban "por las casas" <b></b>Hechos 2:46</b> y <b>Hechos 20:20</b></p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Transición del Evangelismo al Discipulado Inicial</h4>
+                        <p class="text-gray-700">El discipulado es un viaje de por vida. Confirmar la fe, preparar para el bautismo e integrar a la iglesia son los primeros pasos. <b>Mateo 28:19-20</b> y <b>Hechos 2:42</b> nos guían</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg text-brand-bright-blue">Fomento del Servicio a Dios y Crecimiento Espiritual Continuo</h4>
+                        <p class="text-gray-700">Servir es parte de ser discípulo, usando nuestros dones por amor a Dios y a los demás. <b>1 Pedro 4:10</b> nos anima a ser buenos administradores y <b>2 Pedro 3:18</b> a crecer en la gracia</p>
+                    </div>
+
+                    <div class="chart-container mt-8">
+                        <canvas id="day4Chart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-600 mt-4">Este gráfico muestra cómo los nuevos creyentes crecen en su fe y se integran en la iglesia. ¡El seguimiento y el discipulado son vitales para un crecimiento sostenido!</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="recursos-adicionales" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-brand-deep-blue">Recursos Extra y Consejos Prácticos</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Para que este plan sea un éxito, necesitas buena planificación y los recursos adecuados. Aquí van algunos tips.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-brand-bright-blue">
+                        <h3 class="text-xl font-bold text-brand-deep-blue mb-2">¡A Entrenar a tus Voluntarios!</h3>
+                        <p class="text-gray-700 mb-2">Necesitas un equipo con pasión y dispuestos. Capacitarlos bien es clave para que discipulen a los nuevos y sean instrumentos de Dios <b>Romanos 12:4-8</b> y <b></b>2 Timoteo 2:2</b></p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-brand-bright-blue">
+                        <h3 class="text-xl font-bold text-brand-deep-blue mb-2">Logística: ¡Que se cumplan las expectativas!</h3>
+                        <p class="text-gray-700 mb-2">Planifica todo: horarios, lugar estratégico, programa variado. (Colaborar con negocios locales es de mucha ayuda) <b>1 Corintios 14:33</b> y <b>Proverbios 16:3</b> nos recuerdan la importancia del orden y la planificación.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-brand-bright-blue md:col-span-2">
+                        <h3 class="text-xl font-bold text-brand-deep-blue mb-2">Seguimiento: Importante para los Nuevos</h3>
+                        <p class="text-gray-700 mb-2">¡El seguimiento es vital para que los nuevos se integren y crezcan en la fe! Dales la bienvenida, visítalos, preguntales como se sienten (salud, emosiónes, interrogantes), anímalos a ir a la iglesia y mantente en contacto. ¡<b>Hechos 2:42</b> y <b>Juan 8:31</b> lo confirman!</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col md:flex-row items-center gap-8 mt-8">
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl font-bold text-brand-deep-blue mb-4">¡Claves para el Éxito!</h2>
+                        <p class="text-gray-600 mb-4">Para que tu plan sea un éxito rotundo, no basta con una sola cosa. ¡Es un equilibrio de acciones! La capacitación y un buen seguimiento son vitales para que dure a largo plazo.</p>
+                        <p class="text-gray-600">Cada punto es muy importante. Un programa que sea fuerte en todas estas áreas dará mucho fruto y será de erramienta para la restauración que ofrece Dios</p>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="chart-container h-80 md:h-96">
+                            <canvas id="successChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-4">Este gráfico tipo radar muestra la importancia de diferentes factores para el éxito del programa, destacando la capacitación y el seguimiento como vitales.</p>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-6 bg-gray-200 text-gray-600 text-sm">
+        <p>CENTRO CRISTIANO DE RESTAURACIÓN LOS RÍOS</b>
+        <p>Infografía del Plan de Evangelismo Comunitario</p>
+        <p>CRUZANDO EL MAR ROJO</p>
+        <p>&copy; 2025. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (label, maxWidth) => {
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    } else {
+                        currentLine += ' ' + words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            };
+
+            const sharedTooltipConfig = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const brilliantBlues = {
+                deepBlue: '#00446A',
+                brightBlue: '#0078B4',
+                skyBlue: '#00AEEF',
+                lightSkyBlue: '#7DDFFF',
+                background: 'rgba(0, 120, 180, 0.2)',
+            };
+
+            const day1Ctx = document.getElementById('day1Chart');
+            if(day1Ctx) {
+                new Chart(day1Ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Actos de Servicio', 'Empatía y Escucha', 'Juegos y Conexión', 'Construcción de Confianza'],
+                        datasets: [{
+                            label: 'Pilares del Día 1',
+                            data: [40, 25, 15, 20],
+                            backgroundColor: [
+                                brilliantBlues.brightBlue,
+                                brilliantBlues.skyBlue,
+                                brilliantBlues.lightSkyBlue,
+                                brilliantBlues.deepBlue
+                            ],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                           ...sharedTooltipConfig.plugins,
+                            legend: {
+                                position: 'top',
+                            }
+                        }
+                    }
+                });
+            }
+
+            const day2Ctx = document.getElementById('day2Chart');
+            if(day2Ctx) {
+                new Chart(day2Ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Niños', 'Jóvenes', 'Danza', 'Alabanza', 'Apoyo y Consejería'],
+                        datasets: [{
+                            label: 'Relevancia del Ministerio',
+                            data: [85, 75, 90, 65, 70],
+                            backgroundColor: brilliantBlues.background,
+                            borderColor: brilliantBlues.brightBlue,
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                grid: {
+                                    color: 'rgba(0,0,0,0.05)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        },
+                        plugins: {
+                            ...sharedTooltipConfig.plugins,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const day4Ctx = document.getElementById('day4Chart');
+            if(day4Ctx) {
+                new Chart(day4Ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Evento', 'Visita Inicial', 'Integración a Grupo', 'Servicio Activo', 'Multiplicación'],
+                        datasets: [{
+                            label: 'Crecimiento del Discípulo',
+                            data: [10, 30, 60, 80, 100],
+                            fill: true,
+                            backgroundColor: brilliantBlues.background,
+                            borderColor: brilliantBlues.brightBlue,
+                            tension: 0.3,
+                            pointBackgroundColor: brilliantBlues.deepBlue
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(0,0,0,0.05)'
+                                }
+                            },
+                             x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        },
+                        plugins: {
+                           ...sharedTooltipConfig.plugins,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const successCtx = document.getElementById('successChart');
+            if(successCtx) {
+                const rawLabels = ['Capacitación de Voluntarios', 'Sistema de Seguimiento', 'Logística y Coordinación', 'Diagnóstico Comunitario', 'Claridad del Mensaje'];
+                const wrappedLabels = rawLabels.map(label => wrapLabel(label, 16));
+
+                new Chart(successCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: wrappedLabels,
+                        datasets: [{
+                            label: 'Nivel de Importancia',
+                            data: [95, 90, 80, 85, 88],
+                            fill: true,
+                            backgroundColor: 'rgba(0, 120, 180, 0.2)',
+                            borderColor: 'rgb(0, 120, 180)',
+                            pointBackgroundColor: 'rgb(0, 120, 180)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(0, 120, 180)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            ...sharedTooltipConfig.plugins,
+                            legend: {
+                                display: false,
+                            },
+                        },
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    color: 'rgba(0,0,0,0.1)'
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 100,
+                                grid: {
+                                    color: 'rgba(0,0,0,0.1)'
+                                },
+                                pointLabels: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
