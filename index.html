@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan de Evangelismo</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -104,42 +104,54 @@
         .timeline-item:last-child::after {
             display: none;
         }
- /* Estilos personalizados para el HEADER (mantener los mismos) */
+        /* Estilos personalizados para el HEADER */
         .brand-deep-blue {
             background-color: #0A2342;
         }
+
         .text-brand-light-sky-blue {
             color: #ADD8E6;
         }
+
+        /* Contenedor principal que alinea el logo y el texto */
         .header-content {
             display: flex;
-            align-items: center;
-            gap: 0.5rem; /* Ajustado para móvil */
-            padding: 1rem; /* Ajustado para móvil */
+            align-items: center; /* Alinea verticalmente los elementos al centro */
+            /* *** AJUSTES CLAVE PARA MÓVIL (espacio para texto de 3 líneas) *** */
+            gap: 0.25rem; /* Espacio MUY reducido entre logo y texto para móvil */
+            padding: 0.75rem; /* Padding general más pequeño en móvil */
         }
+
+        /* Contenedor del logo */
         .logo-container {
             display: flex;
             align-items: center;
             height: auto;
-            margin-right: 0.5rem; /* Ajustado para móvil */
+            /* *** AJUSTE CLAVE PARA MÓVIL (espacio para texto de 3 líneas) *** */
+            margin-right: 0.5rem; /* Espacio reducido a la derecha del logo para móvil */
         }
+
         /* Estilos responsivos del logo */
         .header-logo {
-            max-height: 300px; /* TAMAÑO DEL LOGO PARA CELULARES */
+            max-height: 80px; /* TAMAÑO DEL LOGO PARA CELULARES */
             height: auto;
             width: auto;
             object-fit: contain;
         }
+
+        /* Contenedor del texto (h1 y p) */
         .text-content {
             display: flex;
             flex-direction: column;
             text-align: left;
             flex-grow: 1;
-            margin-top: 0.5rem; /* Ajuste para móviles */
+            margin-top: 0.5rem; /* Mantiene un margen top para la alineación sutil */
         }
 
-        /* --- MEDIA QUERIES PARA RESPONSIVIDAD GENERAL --- */
-        @media (min-width: 768px) { /* Tabletas */
+        /* --- MEDIA QUERIES PARA RESPONSIVIDAD GENERAL (mantener estas) --- */
+
+        /* Para pantallas medianas (MD - tabletas y arriba, ~768px) */
+        @media (min-width: 768px) {
             .header-content {
                 gap: 1rem;
                 padding: 1.5rem 2rem;
@@ -155,7 +167,8 @@
             }
         }
 
-        @media (min-width: 1024px) { /* Escritorio */
+        /* Para pantallas grandes (LG - escritorio y arriba, ~1024px) */
+        @media (min-width: 1024px) {
             .header-content {
                 gap: 1.5rem;
                 padding: 2rem 3rem;
@@ -188,21 +201,19 @@
         }
 
         /* Clases de Tailwind CSS usadas (solo para referencia) */
+        /* Las clases de texto ahora están ajustadas en el HTML */
         .text-white { color: #fff; }
         .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
         .font-bold { font-weight: 700; }
-        /* Las siguientes se modificarán en el HTML */
-        /* .text-3xl { font-size: 1.875rem; line-height: 2.25rem; } */
-        /* .md\:text-5xl { font-size: 3rem; line-height: 1; } */
-        /* .text-lg { font-size: 1.125rem; line-height: 1.75rem; } */
-        /* .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; } */
-        /* .text-sm { font-size: 0.875rem; line-height: 1.25rem; } */
-
-        /* Nuevas referencias de tamaño para móvil */
-        .text-2xl { font-size: 1.5rem; /* 24px */ line-height: 2rem; /* 32px */ }
-        .text-base { font-size: 1rem; /* 16px */ line-height: 1.5rem; /* 24px */ }
         .text-xs { font-size: 0.75rem; /* 12px */ line-height: 1rem; /* 16px */ }
-</style>
+        .text-sm { font-size: 0.875rem; /* 14px */ line-height: 1.25rem; /* 20px */ }
+        .text-base { font-size: 1rem; /* 16px */ line-height: 1.5rem; /* 24px */ }
+        .text-lg { font-size: 1.125rem; /* 18px */ line-height: 1.75rem; /* 28px */ }
+        .text-xl { font-size: 1.25rem; /* 20px */ line-height: 1.75rem; /* 28px */ } /* <-- Nueva referencia */
+        .text-2xl { font-size: 1.5rem; /* 24px */ line-height: 2rem; /* 32px */ }
+        .md\:text-xl { font-size: 1.25rem; /* 20px */ line-height: 1.75rem; /* 28px */ }
+        .md\:text-5xl { font-size: 3rem; /* 48px */ line-height: 1; }
+ </style>
 </head>
 <body class="antialiased">
 
@@ -214,10 +225,10 @@
             <div class="text-content">
                 <h1 class="text-xl md:text-5xl font-bold">Plan de Evangelismo "CRUZANDO EL MAR ROJO"</h1>
                 <p class="text-base md:text-xl text-brand-light-sky-blue">Un modelo de 4 días para transformar comunidades</p>
-                <p class="text-xs md:text-base text-brand-light-sky-blue">DE LA COMPASIÓN AL DISCIPULADO</p>
+                <p class="text-xs md:text-xl text-brand-light-sky-blue">DE LA COMPASIÓN AL DISCIPULADO</p>
             </div>
         </div>
-</header>
+   </header>
 
     <main class="container mx-auto p-4 md:p-8">
         
