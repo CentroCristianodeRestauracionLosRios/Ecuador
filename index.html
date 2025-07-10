@@ -113,27 +113,25 @@
             color: #ADD8E6;
         }
 
-        /* Contenedor principal que alinea el logo y el texto */
+        /* Contenedor principal que alinea el logo y el texto (ESTILOS PARA MÓVIL POR DEFECTO) */
         .header-content {
             display: flex;
-            align-items: center; /* Alinea verticalmente los elementos al centro */
-            /* *** AJUSTES CLAVE PARA MÓVIL (espacio para texto de 3 líneas) *** */
-            gap: 0.25rem; /* Espacio MUY reducido entre logo y texto para móvil */
+            align-items: flex-start; /* *** CLAVE: Alinea los elementos desde la parte superior (como en la imagen) *** */
+            gap: 0.25rem; /* Espacio muy reducido entre logo y texto para móvil */
             padding: 0.75rem; /* Padding general más pequeño en móvil */
         }
 
         /* Contenedor del logo */
         .logo-container {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Alinea la imagen del logo también al inicio de su contenedor si fuera necesario */
             height: auto;
-            /* *** AJUSTE CLAVE PARA MÓVIL (espacio para texto de 3 líneas) *** */
             margin-right: 0.5rem; /* Espacio reducido a la derecha del logo para móvil */
         }
 
         /* Estilos responsivos del logo */
         .header-logo {
-            max-height: 80px; /* TAMAÑO DEL LOGO PARA CELULARES */
+            max-height: 80px; /* TAMAÑO DEL LOGO PARA CELULARES (ajusta si aún es muy grande/pequeño) */
             height: auto;
             width: auto;
             object-fit: contain;
@@ -145,14 +143,15 @@
             flex-direction: column;
             text-align: left;
             flex-grow: 1;
-            margin-top: 0.5rem; /* Mantiene un margen top para la alineación sutil */
+            margin-top: 0; /* Aseguramos que no haya margen superior si usamos flex-start en el padre */
         }
 
-        /* --- MEDIA QUERIES PARA RESPONSIVIDAD GENERAL (mantener estas) --- */
+        /* --- MEDIA QUERIES PARA RESPONSIVIDAD GENERAL (para tabletas y escritorio) --- */
 
         /* Para pantallas medianas (MD - tabletas y arriba, ~768px) */
         @media (min-width: 768px) {
             .header-content {
+                align-items: center; /* Volvemos al centrado vertical para tabletas */
                 gap: 1rem;
                 padding: 1.5rem 2rem;
             }
@@ -163,13 +162,14 @@
                 max-height: 200px; /* TAMAÑO DEL LOGO PARA TABLETAS */
             }
             .text-content {
-                margin-top: 1rem;
+                margin-top: 1rem; /* Alineación para tabletas */
             }
         }
 
         /* Para pantallas grandes (LG - escritorio y arriba, ~1024px) */
         @media (min-width: 1024px) {
             .header-content {
+                align-items: center; /* Centrado vertical para escritorio */
                 gap: 1.5rem;
                 padding: 2rem 3rem;
             }
@@ -180,7 +180,7 @@
                 max-height: 400px; /* TAMAÑO DEL LOGO PARA ESCRITORIO */
             }
             .text-content {
-                margin-top: 1.5rem;
+                margin-top: 1.5rem; /* Alineación para escritorio */
             }
         }
         /* --- FIN MEDIA QUERIES --- */
@@ -201,7 +201,6 @@
         }
 
         /* Clases de Tailwind CSS usadas (solo para referencia) */
-        /* Las clases de texto ahora están ajustadas en el HTML */
         .text-white { color: #fff; }
         .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
         .font-bold { font-weight: 700; }
@@ -209,15 +208,15 @@
         .text-sm { font-size: 0.875rem; /* 14px */ line-height: 1.25rem; /* 20px */ }
         .text-base { font-size: 1rem; /* 16px */ line-height: 1.5rem; /* 24px */ }
         .text-lg { font-size: 1.125rem; /* 18px */ line-height: 1.75rem; /* 28px */ }
-        .text-xl { font-size: 1.25rem; /* 20px */ line-height: 1.75rem; /* 28px */ } /* <-- Nueva referencia */
+        .text-xl { font-size: 1.25rem; /* 20px */ line-height: 1.75rem; /* 28px */ }
         .text-2xl { font-size: 1.5rem; /* 24px */ line-height: 2rem; /* 32px */ }
         .md\:text-xl { font-size: 1.25rem; /* 20px */ line-height: 1.75rem; /* 28px */ }
         .md\:text-5xl { font-size: 3rem; /* 48px */ line-height: 1; }
- </style>
+  </style>
 </head>
 <body class="antialiased">
 
-    <header class="brand-deep-blue text-white p-8 shadow-lg">
+        <header class="brand-deep-blue text-white p-8 shadow-lg">
         <div class="header-content">
             <div class="logo-container">
                 <img src="LOGO.png" alt="Logo de Plan de Evangelismo CRUZANDO EL MAR ROJO" class="header-logo">
@@ -228,7 +227,7 @@
                 <p class="text-xs md:text-xl text-brand-light-sky-blue">DE LA COMPASIÓN AL DISCIPULADO</p>
             </div>
         </div>
-   </header>
+    </header>
 
     <main class="container mx-auto p-4 md:p-8">
         
