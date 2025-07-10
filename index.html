@@ -11,9 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página</title>
+    <title>Plan de Evangelismo</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -105,71 +104,91 @@
         .timeline-item:last-child::after {
             display: none;
         }
-    /* --- ESTILOS PERSONALIZADOS --- */
+        /* Estilos personalizados para el HEADER */
         .brand-deep-blue {
-            background-color: #0A2342; /* Ejemplo de un azul profundo */
+            background-color: #0A2342; /* Color de fondo del encabezado */
         }
 
         .text-brand-light-sky-blue {
-            color: #ADD8E6; /* Ejemplo de un azul cielo claro */
+            color: #ADD8E6; /* Color del texto de los párrafos */
         }
 
+        /* Contenedor principal que alinea el logo y el texto */
         .header-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
+            display: flex; /* Habilita Flexbox para poner elementos uno al lado del otro */
+            align-items: center; /* **ALINEA VERTICALMENTE LOS ELEMENTOS AL CENTRO (base)** */
+            gap: 1rem; /* Espacio entre el logo y el texto */
+            padding: 1rem 2rem; /* Ajuste del padding para el espaciado interno */
         }
 
+        /* Contenedor del logo para controlar su espacio y alineación */
         .logo-container {
             display: flex;
-            align-items: flex-start;
-            height: 100%;
+            align-items: center; /* Alinea verticalmente la imagen dentro de su contenedor */
+            height: auto; /* Permite que la altura se ajuste al logo */
+            margin-right: 1.5rem; /* ESPACIO A LA DERECHA DEL LOGO (un poco más para tu imagen) */
         }
 
+        /* Estilos para la imagen del logo */
         .header-logo {
-            height: auto;
-            max-height: 50%;
-            width: auto;
-            object-fit: contain;
+            max-height: 400px; /* **TAMAÑO DEL LOGO AJUSTADO (más grande)** - AJUSTA ESTE VALOR */
+            height: auto; /* Mantiene la proporción de la imagen */
+            width: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Asegura que la imagen completa sea visible sin ser cortada */
         }
 
+        /* Contenedor del texto (h1 y p) */
         .text-content {
             display: flex;
-            flex-direction: column;
-            text-align: left;
-            flex-grow: 1;
+            flex-direction: column; /* Apila el h1 y los p verticalmente */
+            text-align: left; /* Alinea todo el texto a la IZQUIERDA */
+            flex-grow: 1; /* Permite que este bloque ocupe el espacio restante */
+            margin-top: 1.5rem; /* **AJUSTE CLAVE: Empuja el texto ligeramente hacia abajo.** Prueba con 1rem, 1.5rem, 2rem. */
         }
 
-        .text-content h1,
+        /* Ajustes de margen para h1 y p para que estén más juntos */
+        .text-content h1 {
+            margin-bottom: 0.25rem; /* Margen inferior del título (ajusta si es necesario) */
+            margin-top: 0; /* Asegura que no haya margen superior por defecto de navegador */
+        }
+
+        .text-content p:nth-child(2) { /* Primer párrafo después del h1 */
+            margin-bottom: 0.5rem; /* Margen inferior del primer párrafo (ajusta si es necesario) */
+        }
+
         .text-content p {
-            margin-left: 0;
-            margin-right: 0;
-            text-align: left;
-            max-width: none;
+            margin-top: 0; /* Asegura que no haya margen superior por defecto */
+            margin-left: 0; /* Asegura alineación izquierda completa, anulando mx-auto de Tailwind */
+            margin-right: 0; /* Asegura alineación izquierda completa, anulando mx-auto de Tailwind */
+            max-width: none; /* Anula cualquier max-width para que el texto use todo el ancho disponible */
         }
 
-        /* Ajustar el padding del header para el alineado a la izquierda */
-        .brand-deep-blue {
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-        /* --- FIN ESTILOS PERSONALIZADOS --- */
+        /* Clases de Tailwind CSS usadas en el HTML (solo para referencia si no las tienes importadas) */
+        .text-white { color: #fff; }
+        .p-8 { padding: 2rem; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .text-3xl { font-size: 1.875rem; /* 30px */ line-height: 2.25rem; /* 36px */ }
+        .md\:text-5xl { font-size: 3rem; /* 48px */ line-height: 1; }
+        .font-bold { font-weight: 700; }
+        .text-lg { font-size: 1.125rem; /* 18px */ line-height: 1.75rem; /* 28px */ }
+        .md\:text-xl { font-size: 1.25rem; /* 20px */ line-height: 1.75rem; /* 28px */ }
+        .text-sm { font-size: 0.875rem; /* 14px */ line-height: 1.25rem; /* 20px */ }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="brand-deep-blue text-white p-8 shadow-lg">
+<header class="brand-deep-blue text-white p-8 shadow-lg">
         <div class="header-content">
             <div class="logo-container">
                 <img src="LOGO.png" alt="Logo de Plan de Evangelismo CRUZANDO EL MAR ROJO" class="header-logo">
             </div>
             <div class="text-content">
-                <h1 class="text-3xl md:text-5xl font-bold mb-2">Plan de Evangelismo "CRUZANDO EL MAR ROJO"</h1>
-                <p class="text-lg md:text-xl max-w-3xl text-brand-light-sky-blue mb-4">Un modelo de 4 días para transformar comunidades</p>
-                <p class="text-sm md:text-xl max-w-3xl text-brand-light-sky-blue">DE LA COMPASIÓN AL DISCIPULADO</p>
+                <h1 class="text-3xl md:text-5xl font-bold">Plan de Evangelismo "CRUZANDO EL MAR ROJO"</h1>
+                <p class="text-lg md:text-xl text-brand-light-sky-blue">Un modelo de 4 días para transformar comunidades</p>
+                <p class="text-sm md:text-xl text-brand-light-sky-blue">DE LA COMPASIÓN AL DISCIPULADO</p>
             </div>
         </div>
-</header>
+    </header>
 
     <main class="container mx-auto p-4 md:p-8">
         
